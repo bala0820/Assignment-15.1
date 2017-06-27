@@ -1,0 +1,9 @@
+Create table dummy(name String, skill String, students int, city String) ROW FORMAT DELIMITED 
+FIELDS TERMINATED BY ','
+STORED AS TEXTFILE;
+
+LOAD DATA LOCAL INPATH '/home/cloudera/Desktop/Projects/Hive/emp_details.txt' OVERWRITE INTO TABLE dummy;
+
+calculate the number of employees corresponding to each skill from the table 'employee' which is loaded in the Demo.
+
+Select Count(students), skill from dummy group by skill; 
